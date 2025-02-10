@@ -1,16 +1,16 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-using static System.Net.Mime.MediaTypeNames;
+using Mission6Assignment.Models;
 
 namespace Mission6Assignment.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private FormContext _context;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(FormContext temp)
         {
-            _logger = logger;
+            _context = temp;
         }
 
         public IActionResult Index()
@@ -23,9 +23,19 @@ namespace Mission6Assignment.Controllers
             return View();
         }
 
+        [HttpGet]
         public IActionResult MovieForm()
         {
-            return View(MovieForm);
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult MovieForm(Form response)
+        {
+            _context.Movies.Add(response);
+            _context.SaveChanges();
+
+            return View("Confirm", response);
         }
     }
 }
