@@ -1,0 +1,45 @@
+﻿@model Form
+
+<h1>Submit a movie</h1>
+
+<h1>Dating Application</h1>
+
+<form method="post">
+    <label asp-for="Category">Category:</label>
+    <input asp-for="Category" required/>
+    <br />
+    <label asp-for="Title">Title:</label>
+    <input asp-for="Title" required />
+    <br />
+    <label asp-for="Year">Year:</label>
+    <input asp-for="Year" required />
+    <br />
+    <label asp-for="Director">Director:</label>
+    <input asp-for="Director" required />
+    <br />
+    <label asp-for="Rating">Rating</label>
+    <select asp-for="Rating" required>
+        <option>G</option>
+        <option>PG</option>
+        <option>PG-13</option>
+        <option>R</option>
+    </select>
+    <br />
+    <label asp-for="Edited">Edited:</label>
+    <select asp-for="Edited" >
+        <option value="True">Yes</option>
+        <option value="False">No</option>
+    </select>
+    <br />
+    <label asp-for="Lentto">Lent to:</label>
+    <input asp-for="Lentto" />
+    <br />
+    <label asp-for="Notes">Notes:</label>
+    <input asp-for="Notes" maxlength="25" size="4"/>
+    <br />
+    
+    <br />
+
+    <button type="submit">Submit Application</button>
+
+</form>
