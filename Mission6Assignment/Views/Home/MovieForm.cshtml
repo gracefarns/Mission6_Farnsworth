@@ -5,8 +5,11 @@
 <h1>Dating Application</h1>
 
 <form method="post">
-    <label asp-for="Category">Category:</label>
-    <input asp-for="Category" required/>
+    <label asp-for="MovieId">Movie Id:</label>
+    <input asp-for="MovieId" required />
+    <br />
+    <label asp-for="CategoryId">Category:</label>
+    <input asp-for="CategoryId" required/>
     <br />
     <label asp-for="Title">Title:</label>
     <input asp-for="Title" required />
@@ -14,14 +17,11 @@
     <label asp-for="Year">Year:</label>
     <input asp-for="Year" required />
     <br />
-    <label asp-for="DirectorF">Director's First Name:</label>
-    <input asp-for="DirectorF" required />
-    <br />
-    <label asp-for="DirectorL">Director's Last Name:</label>
-    <input asp-for="DirectorL" required />
+    <label asp-for="Director">Director's Name:</label>
+    <input asp-for="Director" />
     <br />
     <label asp-for="Rating">Rating</label>
-    <select asp-for="Rating" required>
+    <select asp-for="Rating">
         <option>G</option>
         <option>PG</option>
         <option>PG-13</option>
@@ -34,15 +34,18 @@
         <option value="False">No</option>
     </select>
     <br />
-    <label asp-for="Lentto">Lent to:</label>
-    <input asp-for="Lentto" />
+    <label asp-for="LentTo">Lent to:</label>
+    <input asp-for="LentTo" />
+    <br />
+    <label asp-for="CopiedToPlex">CopiedToPlex:</label>
+    <input asp-for="CopiedToPlex" required />
     <br />
     <label asp-for="Notes">Notes:</label>
     <input asp-for="Notes" maxlength="25" size="4"/>
     <br />
     
     <br />
-
+    
     <button type="submit">Submit Application</button>
 
 </form>

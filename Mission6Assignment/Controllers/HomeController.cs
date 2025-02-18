@@ -1,5 +1,6 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Mission6Assignment.Models;
 
 namespace Mission6Assignment.Controllers
@@ -36,6 +37,12 @@ namespace Mission6Assignment.Controllers
             _context.SaveChanges();
 
             return View("Confirm", response);
+        }
+
+        public IActionResult ShowMovies()
+        {
+            var movies = _context.Movies.ToList();
+            return View(movies);
         }
     }
 }

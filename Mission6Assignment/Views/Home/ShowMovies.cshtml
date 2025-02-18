@@ -1,0 +1,50 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@* MovieId, CategoryId, Title, Year, Director, Rating, Edited, LentTo, CopiedToPlex, Notes *@
+
+<h1>Movies</h1>
+
+@model List<Form>
+
+<table class="table table-bordered">
+    <thead class="fw-bold">
+        <tr>
+            <td>MovieId</td>
+            <td>CategoryId</td>
+            <td>Title</td>
+            <td>Year</td>
+            <td>Director</td>
+            <td>Rating</td>
+            <td>Edited</td>
+            <td>LentTo</td>
+            <td>CopiedToPlex</td>
+            <td>Notes</td>
+        </tr>
+    </thead>
+
+    @foreach (var x in Model)
+    {
+        <tbody>
+            <tr>
+                <td>@x.MovieId</td>
+                <td>@x.CategoryId</td>
+                <td>@x.Title</td>
+                <td>@x.Year</td>
+                <td>@x.Director</td>
+                <td>@x.Rating</td>
+                <td>@x.Edited</td>
+                <td>@x.LentTo</td>
+                <td>@x.CopiedToPlex</td>
+                <td>@x.Notes</td>
+
+                @* <td><a class="btn" btn-info asp-controller="Home" asp-action="Edit" asp-route-id="@x.ApplicationId">Edit</a></td> @*asp-route-id -- id could be any other name*@
+                @* <td><a class="btn" btn-danger asp-controller="Home" asp-action="Delete" asp-route-id="@x.ApplicationId">Delete</a></td> *@
+            </tr>
+        </tbody>
+    }
+    
+</table>
