@@ -14,7 +14,7 @@
     <thead class="fw-bold">
         <tr>
             <td>MovieId</td>
-            <td>CategoryId</td>
+            <td>Category</td>
             <td>Title</td>
             <td>Year</td>
             <td>Director</td>
@@ -31,7 +31,7 @@
         <tbody>
             <tr>
                 <td>@x.MovieId</td>
-                <td>@x.CategoryId</td>
+                <td>@x.Category.CategoryName</td>
                 <td>@x.Title</td>
                 <td>@x.Year</td>
                 <td>@x.Director</td>
@@ -41,8 +41,8 @@
                 <td>@x.CopiedToPlex</td>
                 <td>@x.Notes</td>
 
-                @* <td><a class="btn" btn-info asp-controller="Home" asp-action="Edit" asp-route-id="@x.ApplicationId">Edit</a></td> @*asp-route-id -- id could be any other name*@
-                @* <td><a class="btn" btn-danger asp-controller="Home" asp-action="Delete" asp-route-id="@x.ApplicationId">Delete</a></td> *@
+                <td><a class="btn" btn-info asp-controller="Home" asp-action="Edit" asp-route-id="@x.MovieId">Update</a></td> @*asp-route-id -- id could be any other name*@
+                <td><a class="btn" btn-danger asp-controller="Home" asp-action="Delete" asp-route-id="@x.MovieId">Delete</a></td>
             </tr>
         </tbody>
     }

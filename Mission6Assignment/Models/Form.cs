@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Components.Forms;
 using System.Reflection.Emit;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel;
 
 namespace Mission6Assignment.Models
 {
@@ -10,11 +11,13 @@ namespace Mission6Assignment.Models
         [Key]
         [Required]
         public int MovieId { get; set; }
+        [ForeignKey("CategoryId")]
         [Required]
-        public string CategoryId { get; set; }
+        public Category Category { get; set; }
         [Required]
         public string Title { get; set; }
         [Required]
+        [Range(1888, 2025,ErrorMessage = "You must enter a date between 1888 and 2025")]
         public int Year { get; set; }
         public string? Director { get; set; }
         public string? Rating { get; set; }

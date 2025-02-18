@@ -11,6 +11,6 @@ namespace Mission6Assignment.Models
 
         public DbSet<Form> Movies { get; set; }
 
-
+        public DbSet<Category> Categories { get; set; }
     }
 }
