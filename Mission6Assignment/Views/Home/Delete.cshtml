@@ -5,12 +5,12 @@
 }
 @model Form
 
-<h2>Confirm Deletion</h2>
+<h4>Confirm Deletion:</h4>
 <h3>@Model.Title</h3>
 
 <form method="post">
 
-    <input type="hidden" asp-for="MovieId" />"
+    <input type="hidden" asp-for="MovieId" />
 
     <button type="submit">Delete</button>
     <a class="btn btn-info" asp-controller="Home" asp-action="ShowMovies">Cancel</a>
