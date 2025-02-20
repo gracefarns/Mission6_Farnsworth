@@ -8,6 +8,7 @@ namespace Mission6Assignment.Controllers
 {
     public class HomeController : Controller
     {
+        // get the instance of a form
         private FormContext _context;
 
         public HomeController(FormContext temp)
@@ -15,16 +16,19 @@ namespace Mission6Assignment.Controllers
             _context = temp;
         }
 
+        // get the view index
         public IActionResult Index()
         {
             return View();
         }
 
+        // get the view KnowJoel
         public IActionResult KnowJoel()
         {
             return View();
         }
 
+        // get route for the movie form that takes in categoryname from the category table
         [HttpGet]
         public IActionResult MovieForm()
         {
@@ -34,6 +38,7 @@ namespace Mission6Assignment.Controllers
             return View("MovieForm", new Form());
         }
 
+        // Post route for the movie form that adds a movie to the database
         [HttpPost]
         public IActionResult MovieForm(Form response)
         {
@@ -54,6 +59,7 @@ namespace Mission6Assignment.Controllers
             
         }
 
+        // get route for show movies that includes the category table
         public IActionResult ShowMovies()
         {
             var movies = _context.Movies
@@ -64,6 +70,7 @@ namespace Mission6Assignment.Controllers
             return View(movies);
         }
 
+        // get route for edit that gets a MovieId and also takes categoryName from the category table
         [HttpGet]
         public IActionResult Edit(int id)
         {
@@ -78,6 +85,7 @@ namespace Mission6Assignment.Controllers
 
         }
 
+        // post route to edit and update a form into the database
         [HttpPost]
         public IActionResult Edit(Form updatedInfo)
         {
@@ -86,6 +94,7 @@ namespace Mission6Assignment.Controllers
             return RedirectToAction("ShowMovies");
         }
 
+        // get route for the delete action that takes in the movieId
         [HttpGet]
         public IActionResult Delete(int id)
         {
@@ -95,6 +104,7 @@ namespace Mission6Assignment.Controllers
             return View(recordToDelete);
         }
 
+        // post route that takes a movie form and deletes it
         [HttpPost]
         public IActionResult Delete(Form movie)
         {
